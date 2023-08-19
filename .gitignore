@@ -43,3 +43,4 @@ notes.otl
 
 # Miscellaneous
 .nfs*
+run_spec_llm_efficiency.conf

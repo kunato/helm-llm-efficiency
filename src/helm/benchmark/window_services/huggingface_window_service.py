@@ -22,6 +22,8 @@ class HuggingFaceWindowService(LocalWindowService):
             self._max_sequence_length = max_sequence_length
         else:
             self._max_sequence_length = tokenizer.model_max_length
+        if self._max_sequence_length > 2048:
+            self._max_sequence_length = 2048
 
     @property
     def max_sequence_length(self) -> int:

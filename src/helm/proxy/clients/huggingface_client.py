@@ -45,7 +45,7 @@ class HuggingFaceServer:
             raise Exception(f"Unknown type of model_config: {model_config}")
         with htrack_block(f"Loading Hugging Face model for config {model_config}"):
             # WARNING this may fail if your GPU does not have enough memory
-            self.model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True, **model_kwargs).to(
+            self.model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True, torch_dtype=torch.bfloat16, **model_kwargs).to(
                 self.device
             )
         with htrack_block(f"Loading Hugging Face tokenizer model for config {model_config}"):

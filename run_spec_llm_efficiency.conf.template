@@ -61,5 +61,5 @@ entries: [
 
   {description: "summarization_cnndm:model=text,temperature=0.3,device=cpu", priority: 1}
 
-  {description: "gsm:model=text", priority: 2}
+  # {description: "gsm:model=text", priority: 2}
 ]
